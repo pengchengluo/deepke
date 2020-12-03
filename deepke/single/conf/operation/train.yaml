@@ -1,0 +1,22 @@
+# @package _global_
+
+
+seed: 602
+num_sanity_val_steps: 0  # before train sanitize valid dataset
+
+
+epochs: 1   # start from 0
+batch_size: 4
+accumulate_grad_batches: 8  # Used to imitate larger batch
+learning_rate: 1e-3
+
+
+
+# use early_stopping
+use_early_stopping: True
+es_patience: 5
+
+# log
+profiler: False
+log_every_n_steps: 1
+flush_logs_every_n_steps: 1

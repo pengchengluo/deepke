@@ -6,6 +6,7 @@ DeepKE 是基于 Pytorch 的深度学习中文关系抽取处理套件。
 
 > Organization: [浙江大学知识引擎实验室](http://openkg.cn/)
 
+> Mentor: 陈华钧，张宁豫
 ---
 
 <a class="mr-2" data-hovercard-type="user" data-hovercard-url="https://github.com/users/huajunsir/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/huajunsir">
@@ -47,66 +48,9 @@ DeepKE 是基于 Pytorch 的深度学习中文关系抽取处理套件。
 - matplotlib >= 3.1
 - transformers >= 2.0
 - jieba >= 0.39
-- ~~pyhanlp >= 0.1.57~~（中文句法分析使用，但是在多句时效果也不好。。求推荐有比较好的中文句法分析）
 
 
 
-## 主要目录
-
-```
-├── conf                      # 配置文件夹
-│  ├── config.yaml            # 配置文件主入口
-│  ├── preprocess.yaml        # 数据预处理配置
-│  ├── train.yaml             # 训练过程参数配置
-│  ├── hydra                  # log 日志输出目录配置
-│  ├── embedding.yaml         # embeding 层配置
-│  ├── model                  # 模型配置文件夹
-│  │  ├── cnn.yaml            # cnn 模型参数配置
-│  │  ├── rnn.yaml            # rnn 模型参数配置
-│  │  ├── capsule.yaml        # capsule 模型参数配置
-│  │  ├── transformer.yaml    # transformer 模型参数配置
-│  │  ├── gcn.yaml            # gcn 模型参数配置
-│  │  ├── lm.yaml             # lm 模型参数配置
-├── pretrained                # 使用如 bert 等语言预训练模型时存放的参数
-│  ├── vocab.txt              # BERT 模型词表
-│  ├── config.json            # BERT 模型结构的配置文件
-│  ├── pytorch_model.bin      # 预训练模型参数
-├── data                      # 数据目录
-│  ├── origin                 # 训练使用的原始数据集
-│  │  ├── train.csv           # 训练数据集
-│  │  ├── valid.csv           # 验证数据集
-│  │  ├── test.csv            # 测试数据集
-│  │  ├── relation.csv        # 关系种类
-│  ├── out                    # 预处理数据后的存放目录
-├── module                    # 可复用模块
-│  ├── Embedding.py           # embedding 层
-│  ├── CNN.py                 # cnn
-│  ├── RNN.py                 # rnn
-│  ├── Attention.py           # attention
-│  ├── Transformer.py         # transformer
-│  ├── Capsule.py             # capsule
-│  ├── GCN.py                 # gcn
-├── models                    # 模型目录
-│  ├── BasicModule.py         # 模型基本配置
-│  ├── PCNN.py                # PCNN / CNN 模型
-│  ├── BiLSTM.py              # BiLSTM 模型
-│  ├── Transformer.py         # Transformer 模型
-│  ├── LM.py                  # Language Model 模型
-│  ├── Capsule.py             # Capsule 模型
-│  ├── GCN.py                 # GCN 模型
-├── test                      # pytest 测试目录
-├── tutorial-notebooks        # simple jupyter notebook tutorial
-├── utils                     # 常用工具函数目录
-├── metrics.py                # 评测指标文件
-├── serializer.py             # 预处理数据过程序列化字符串文件
-├── preprocess.py             # 训练前预处理数据文件
-├── vocab.py                  # token 词表构建函数文件
-├── dataset.py                # 训练过程中批处理数据文件
-├── trainer.py                # 训练验证迭代函数文件
-├── main.py                   # 主入口文件（训练）
-├── predict.py                # 测试入口文件（测试）            
-├── README.md                 # read me 文件
-```
 
 ## 快速开始
 
@@ -131,7 +75,7 @@ sentence|relation|head|head_offset|tail|tail_offset
 
   - `relation.csv`：存放关系种类
 
-- 开始训练：python main.py
+- 开始训练：python train.py
 
 - 每次训练的日志保存在 `logs` 文件夹内，模型结果保存在 `checkpoints` 文件夹内。
 

@@ -1,0 +1,14 @@
+# @package _group_
+
+
+hydra:
+
+  run:
+    # Output directory for normal runs
+    dir: ./${output_log_file}/${now:%Y-%m-%d_%H-%M-%S}
+
+  sweep:
+    # Output directory for sweep runs
+    dir: ./${output_log_file}/${now:%Y-%m-%d_%H-%M-%S}
+    # Output sub directory for sweep runs.
+    subdir: ${hydra.job.num}__${hydra.job.override_dirname}

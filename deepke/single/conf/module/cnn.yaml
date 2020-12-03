@@ -1,0 +1,20 @@
+# @package _global_
+
+
+model_name: BasicCNN
+
+
+embedding_dim: 64
+in_channels: ${embedding_dim}   # use embedding output
+out_channels: 100
+kernel_sizes: [3, 5, 7]        # Must be odd, in order to ensure that the output of CNN does not change the sentence length
+activation: 'gelu'             # [relu, lrelu, prelu, selu, celu, gelu, sigmoid, tanh]
+pooling_strategy: 'max'        # [max, avg, cls]
+keep_length: True
+dropout_rate: 0.3
+
+
+
+num_embeddings: 101
+l1out: 32
+l2out: 10

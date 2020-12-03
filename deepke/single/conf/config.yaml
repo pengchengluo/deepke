@@ -1,0 +1,10 @@
+# original working directory
+cwd: ???
+output_log_file: logs
+
+defaults:
+  - hydra_custom
+  - data
+  - module: cnn
+  - operation: train  # Union[train, test]
+  - gpus

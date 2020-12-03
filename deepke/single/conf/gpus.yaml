@@ -1,0 +1,9 @@
+# @package _group_
+
+use_gpu: True
+
+gpus: [0]
+precision: 32
+dataloader:
+  num_workers: 0
+  pin_memory: False

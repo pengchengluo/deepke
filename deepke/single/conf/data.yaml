@@ -1,0 +1,19 @@
+# @package _group_
+
+data_dir: data/mini
+
+# preprocessed
+has_preprocessed_data: True
+save_preprocessed_data: True
+
+
+# bert
+bert_type: 'bert-base-chinese'
+cache_dir: 'C:/bert'
+mirror: 'tuna'
+
+
+# relation config
+add_special_indicator: True
+replace_entity_to_type: True
+
